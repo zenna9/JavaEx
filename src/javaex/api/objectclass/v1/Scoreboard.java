@@ -2,7 +2,8 @@ package javaex.api.objectclass.v1;
 
 import java.util.Arrays;
 
-public class Scoreboard {
+
+	public class Scoreboard implements Cloneable {
 
 	private int scores[]; //참조타입필드
 
@@ -22,5 +23,13 @@ public class Scoreboard {
 	public void setScores(int[] scores) {
 		this.scores = scores;
 	}
-
+	public Scoreboard getClone() {
+		Scoreboard clone = null;
+		try {
+			clone = (Scoreboard)clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return clone;
+	}
 }
