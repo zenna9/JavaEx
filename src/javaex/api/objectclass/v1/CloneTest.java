@@ -19,4 +19,6 @@ public class CloneTest {
 		// '+s1의 scores 참조주소, s2.scores 참조 주소
 		System.out.println("필드 참조 주소 비교 : " + (s1.getScores() == s2.getScores()));
 	}
+	
+	
 }

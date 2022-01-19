@@ -32,4 +32,14 @@ import java.util.Arrays;
 		}
 		return clone;
 	}
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		//얕은 복제 시도
+		Scoreboard clone = 
+				(Scoreboard)super.clone();
+		//내부 참조 필드 복제 시도
+		clone.scores = 
+				Arrays.copyOf(scores, scores.length);
+		return clone;
+	}
 }
